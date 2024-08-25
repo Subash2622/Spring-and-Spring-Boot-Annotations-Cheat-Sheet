@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spring and Spring Boot Annotations Cheat Sheet</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Spring and Spring Boot Annotations Cheat Sheet</h1>
+    </header>
+
+    <section>
+      <h2>Introduction</h2>
+      <p>
+        This guide will provide a comprehensive cheat sheet for the most
+        commonly used annotations in Spring and Spring Boot.
+      </p>
+    </section>
+
+    <section>
+      <h2>What is Spring Framework?</h2>
+      <p>
+        The Spring Framework is a comprehensive framework for building Java
+        applications. It provides a wide range of functionalities, including
+        dependency injection, transaction management, and aspect-oriented
+        programming. Spring helps developers create high-performance, reusable,
+        and easily testable code by managing the lifecycle and interactions of
+        Java objects.
+      </p>
+    </section>
+
+    <section>
+      <h2>What is Spring Boot?</h2>
+      <p>
+        Spring Boot is developed on top of Spring Framework to simplify the
+        configuration and deployment process. It provides a set of defaults and
+        auto-configuration options that allow developers to get started quickly
+        with minimal configuration. Spring Boot also includes an embedded web
+        server, making it easy to create standalone applications.
+      </p>
+    </section>
+
+    <section>
+      <h2>Spring and Spring Boot Annotations Cheat Sheet</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Annotation</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>@SpringBootApplication</td>
+            <td>
+              Marks the main class of a Spring Boot application.Combines
+              @Configuration, @EnableAutoConfiguration, and @ComponentScan. This
+              is where your application starts.
+            </td>
+          </tr>
+          <tr>
+            <td>@Component</td>
+            <td>
+              Marks a class as a Spring component, making it a managed bean.
+            </td>
+          </tr>
+          <tr>
+            <td>@Service</td>
+            <td>
+              Special type of @Component for service layer classes, typically
+              containing business logic.
+            </td>
+          </tr>
+          <tr>
+            <td>@Repository</td>
+            <td>
+              Special type of @Component for data repository classes. Enables
+              exception translation.
+            </td>
+          </tr>
+          <tr>
+            <td>@Controller</td>
+            <td>
+              Special type of @Component for Spring MVC controllers that handle
+              web requests.
+            </td>
+          </tr>
+          <tr>
+            <td>@RestController</td>
+            <td>
+              Combines @Controller and @ResponseBody. Handles web requests and
+              returns JSON/XML responses directly.
+            </td>
+          </tr>
+          <tr>
+            <td>@Autowired</td>
+            <td>
+              Automatically injects dependencies into a field, setter method, or
+              constructor.
+            </td>
+          </tr>
+          <tr>
+            <td>@Value</td>
+            <td>
+              Injects values from properties files into fields, setter methods,
+              or constructor parameters.
+            </td>
+          </tr>
+          <tr>
+            <td>@Configuration</td>
+            <td>Indicates that a class contains Spring bean definitions.</td>
+          </tr>
+          <tr>
+            <td>@Bean</td>
+            <td>
+              Declares a method that returns a Spring bean to be managed by the
+              Spring container.
+            </td>
+          </tr>
+          <tr>
+            <td>@EnableAutoConfiguration</td>
+            <td>
+              Automatically configures your Spring application based on the
+              dependencies present in the classpath.
+            </td>
+          </tr>
+          <tr>
+            <td>@ComponentScan</td>
+            <td>
+              Configures component scanning directives for use with
+              @Configuration classes. Specifies base packages to scan for
+              annotated components.
+            </td>
+          </tr>
+          <tr>
+            <td>@RequestMapping</td>
+            <td>
+              Maps web requests to specific handler classes or handler methods.
+            </td>
+          </tr>
+          <tr>
+            <td>@GetMapping</td>
+            <td>
+              Shortcut for @RequestMapping(method = RequestMethod.GET). Handles
+              GET requests.
+            </td>
+          </tr>
+          <tr>
+            <td>@PostMapping</td>
+            <td>
+              Shortcut for @RequestMapping(method = RequestMethod.POST). Handles
+              POST requests.
+            </td>
+          </tr>
+          <tr>
+            <td>@PutMapping</td>
+            <td>
+              Shortcut for @RequestMapping(method = RequestMethod.PUT). Handles
+              PUT requests.
+            </td>
+          </tr>
+          <tr>
+            <td>@DeleteMapping</td>
+            <td>
+              Shortcut for @RequestMapping(method = RequestMethod.DELETE).
+              Handles DELETE requests.
+            </td>
+          </tr>
+          <tr>
+            <td>@PatchMapping</td>
+            <td>
+              Shortcut for @RequestMapping(method = RequestMethod.PATCH).
+              Handles PATCH requests.
+            </td>
+          </tr>
+          <tr>
+            <td>@RequestParam</td>
+            <td>Binds a web request parameter to a method parameter.</td>
+          </tr>
+          <tr>
+            <td>@PathVariable</td>
+            <td>Binds a URI template variable to a method parameter.</td>
+          </tr>
+          <tr>
+            <td>@RequestBody</td>
+            <td>Binds the body of a web request to a method parameter.</td>
+          </tr>
+          <tr>
+            <td>@ResponseBody</td>
+            <td>
+              Indicates that the return value of a method should be used as the
+              response body.
+            </td>
+          </tr>
+          <tr>
+            <td>@CrossOrigin</td>
+            <td>
+              Enables Cross-Origin Resource Sharing (CORS) on a method or class.
+            </td>
+          </tr>
+          <tr>
+            <td>@ExceptionHandler</td>
+            <td>
+              Defines a method to handle exceptions thrown by request handler
+              methods.
+            </td>
+          </tr>
+          <tr>
+            <td>@ControllerAdvice</td>
+            <td>
+              Allows you to handle exceptions across the whole application, not
+              just to an individual controller.
+            </td>
+          </tr>
+          <tr>
+            <td>@RestControllerAdvice</td>
+            <td>
+              Combines @ControllerAdvice and @ResponseBody. Applies to REST
+              controllers.
+            </td>
+          </tr>
+          <tr>
+            <td>@RequestScope</td>
+            <td>Indicates that a bean is request-scoped.</td>
+          </tr>
+          <tr>
+            <td>@SessionScope</td>
+            <td>Indicates that a bean is session-scoped.</td>
+          </tr>
+          <tr>
+            <td>@ApplicationScope</td>
+            <td>Indicates that a bean is application-scoped.</td>
+          </tr>
+          <tr>
+            <td>@SessionAttributes</td>
+            <td>Used to store model attributes in the session.</td>
+          </tr>
+          <tr>
+            <td>@ModelAttribute</td>
+            <td>
+              Binds a method parameter or method return value to a named model
+              attribute.
+            </td>
+          </tr>
+          <tr>
+            <td>@Async</td>
+            <td>Indicates that a method should be executed asynchronously.</td>
+          </tr>
+          <tr>
+            <td>@Scheduled</td>
+            <td>
+              Marks a method to be scheduled with a cron expression or fixed
+              delay/rate.
+            </td>
+          </tr>
+          <tr>
+            <td>@EnableScheduling</td>
+            <td>Enables support for scheduled tasks.</td>
+          </tr>
+          <tr>
+            <td>@Conditional</td>
+            <td>Registers a bean based on a condition.</td>
+          </tr>
+          <tr>
+            <td>@Profile</td>
+            <td>Registers a bean only if a specified profile is active.</td>
+          </tr>
+          <tr>
+            <td>@MockBean</td>
+            <td>
+              Creates a mock bean in a Spring application context (used with
+              Spring Boot for testing).
+            </td>
+          </tr>
+          <tr>
+            <td>@SpyBean</td>
+            <td>
+              Creates a spy bean in a Spring application context (used with
+              Spring Boot for testing).
+            </td>
+          </tr>
+          <!-- Add other rows similarly -->
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Explanation with Code Snippets</h2>
+      <div class="code-snippet">
+        <h3>@SpringBootApplication</h3>
+        <h4>
+          Marks the main class of a Spring Boot application. Combines
+          @Configuration, @EnableAutoConfiguration, and @ComponentScan.
+        </h4>
+        <pre><code>
+            @SpringBootApplication
+            public class MySpringBootApplication {
+            public static void main(String[] args) {
+                   SpringApplication.run(MySpringBootApplication.class, args);
+               }
+            }
+            </code></pre>
+      </div>
+      <div class="code-snippet">
+        <h3>@Component</h3>
+        <h4>Marks a class as a Spring component, making it a managed bean.</h4>
+        <pre><code>
+            @Component
+            public class MyComponent {
+                // Bean methods and properties
+            }
+            </code></pre>
+      </div>
+      <div class="code-snippet">
+        <h3>@Service</h3>
+        <h4>
+          Special type of @Component for service layer classes, typically
+          containing business logic.
+        </h4>
+        <pre><code>
+            @Service
+            public class MyService {
+                // Business logic methods
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@Repository</h3>
+        <h4>
+          Special type of @Component for data repository classes. Enables
+          exception translation.
+        </h4>
+        <pre><code>
+            @Repository
+            public class MyRepository {
+                // Data access methods
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@Controller</h3>
+        <h4>
+          Special type of @Component for Spring MVC controllers that handle web
+          requests.
+        </h4>
+        <pre><code>
+            @Controller
+            public class MyController {
+                @RequestMapping("/hello")
+                public String sayHello() {
+                    return "hello";
+                }
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@RestController</h3>
+        <h4>
+          Combines @Controller and @ResponseBody. Handles web requests and
+          returns JSON/XML responses directly.
+        </h4>
+        <pre><code>
+            @RestController
+            public class MyRestController {
+                @GetMapping("/greet")
+                public String greet() {
+                    return "Hello, World!";
+                }
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@Autowired</h3>
+        <h4>
+          Automatically injects dependencies into a field, setter method, or
+          constructor.
+        </h4>
+        <pre><code>
+            @Component
+            public class MyComponent {
+                @Autowired
+                private MyService myService;
+    
+                // Use myService in methods
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@Value</h3>
+        <h4>
+          Injects values from properties files into fields, setter methods, or
+          constructor parameters.
+        </h4>
+        <pre><code>
+            @Component
+            public class MyComponent {
+                @Value("${app.name}")
+                private String appName;
+    
+                // Use appName in methods
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@Configuration</h3>
+        <h4>Indicates that a class contains Spring bean definitions.</h4>
+        <pre><code>
+            @Configuration
+            public class MyConfig {
+                @Bean
+                public MyService myService() {
+                    return new MyService();
+                }
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@Bean</h3>
+        <h4>
+          Declares a method that returns a Spring bean to be managed by the
+          Spring container.
+        </h4>
+        <pre><code>
+            @Configuration
+            public class MyConfig {
+                @Bean
+                public MyService myService() {
+                    return new MyService();
+                }
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@EnableAutoConfiguration</h3>
+        <h4>
+          Automatically configures your Spring application based on the
+          dependencies present in the classpath.
+        </h4>
+        <pre><code>
+            @SpringBootApplication
+            public class MySpringBootApplication {
+                public static void main(String[] args) {
+                    SpringApplication.run(MySpringBootApplication.class, args);
+                }
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@ComponentScan</h3>
+        <h4>
+          Configures component scanning directives for use with @Configuration
+          classes. Specifies base packages to scan for annotated components.
+        </h4>
+        <pre><code>
+            @Configuration
+            @ComponentScan(basePackages = "com.example")
+            public class MyConfig {
+                // Configuration methods
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@RequestMapping</h3>
+        <h4>
+          Maps web requests to specific handler classes or handler methods.
+        </h4>
+        <pre><code>
+            @Controller
+            public class MyController {
+                @RequestMapping("/hello")
+                public String sayHello() {
+                    return "hello";
+                }
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@GetMapping</h3>
+        <h4>
+          Shortcut for @RequestMapping(method = RequestMethod.GET). Handles GET
+          requests.
+        </h4>
+        <pre><code>
+            @RestController
+            public class MyRestController {
+                @GetMapping("/greet")
+                public String greet() {
+                    return "Hello, World!";
+                }
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@PostMapping</h3>
+        <h4>
+          Shortcut for @RequestMapping(method = RequestMethod.POST). Handles
+          POST requests.
+        </h4>
+        <pre><code>
+            @RestController
+            public class MyRestController {
+                @PostMapping("/create")
+                public String create(@RequestBody MyEntity entity) {
+                    // Process entity
+                    return "Created";
+                }
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@PutMapping</h3>
+        <h4>
+          Shortcut for @RequestMapping(method = RequestMethod.PUT). Handles PUT
+          requests.
+        </h4>
+        <pre><code>
+            @RestController
+            public class MyRestController {
+                @PutMapping("/update")
+                public String update(@RequestBody MyEntity entity) {
+                    // Update entity
+                    return "Updated";
+                }
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@DeleteMapping</h3>
+        <h4>
+          Shortcut for @RequestMapping(method = RequestMethod.DELETE). Handles
+          DELETE requests.
+        </h4>
+        <pre><code>
+            @RestController
+            public class MyRestController {
+                @DeleteMapping("/delete/{id}")
+                public String delete(@PathVariable Long id) {
+                    // Delete entity by id
+                    return "Deleted";
+                }
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@PatchMapping</h3>
+        <h4>
+          Shortcut for @RequestMapping(method = RequestMethod.PATCH). Handles
+          PATCH requests.
+        </h4>
+        <pre><code>
+            @RestController
+            public class MyRestController {
+                @PatchMapping("/patch")
+                public String patch(@RequestBody MyEntity entity) {
+                    // Patch entity
+                    return "Patched";
+                }
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@RequestParam</h3>
+        <h4>Binds a web request parameter to a method parameter.</h4>
+        <pre><code>
+            @RestController
+            public class MyRestController {
+                @GetMapping("/param")
+                public String param(@RequestParam String name) {
+                    return "Hello, " + name;
+                }
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@PathVariable</h3>
+        <h4>Binds a URI template variable to a method parameter.</h4>
+        <pre><code>
+            @RestController
+            public class MyRestController {
+                @GetMapping("/path/{id}")
+                public String path(@PathVariable Long id) {
+                    return "ID: " + id;
+                }
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@RequestBody</h3>
+        <h4>Binds the body of a web request to a method parameter.</h4>
+        <pre><code>
+            @RestController
+            public class MyRestController {
+                @PostMapping("/body")
+                public String body(@RequestBody MyEntity entity) {
+                    return "Received: " + entity;
+                }
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@ResponseBody</h3>
+        <h4>
+          Indicates that the return value of a method should be used as the
+          response body.
+        </h4>
+        <pre><code>
+            @Controller
+            public class MyController {
+                @RequestMapping("/json")
+                @ResponseBody
+                public String json() {
+                    return "{\"message\":\"Hello, World!\"}";
+                }
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@CrossOrigin</h3>
+        <h4>
+          Enables Cross-Origin Resource Sharing (CORS) on a method or class.
+        </h4>
+        <pre><code>
+            @RestController
+            @CrossOrigin(origins = "http://example.com")
+            public class MyRestController {
+                @GetMapping("/cors")
+                public String cors() {
+                    return "CORS Enabled";
+                }
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@ExceptionHandler</h3>
+        <h4>
+          Defines a method to handle exceptions thrown by request handler
+          methods.
+        </h4>
+        <pre><code>
+            @Controller
+            public class MyController {
+                @ExceptionHandler(Exception.class)
+                public String handleException() {
+                    return "error";
+                }
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@ControllerAdvice</h3>
+        <h4>
+          Allows you to handle exceptions across the whole application, not just
+          to an individual controller.
+        </h4>
+        <pre><code>
+            @ControllerAdvice
+            public class GlobalExceptionHandler {
+                @ExceptionHandler(Exception.class)
+                public String handleException() {
+                    return "error";
+                }
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@RestControllerAdvice</h3>
+        <h4>
+          Combines @ControllerAdvice and @ResponseBody. Applies to REST
+          controllers.
+        </h4>
+        <pre><code>
+            @RestControllerAdvice
+            public class GlobalRestExceptionHandler {
+                @ExceptionHandler(Exception.class)
+                public String handleException() {
+                    return "{\"error\":\"An error occurred\"}";
+                }
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@RequestScope</h3>
+        <h4>Indicates that a bean is request-scoped.</h4>
+        <pre><code>
+            @Component
+            @RequestScope
+            public class MyRequestScopedBean {
+                // Bean methods and properties
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@SessionScope</h3>
+        <h4>Indicates that a bean is session-scoped.</h4>
+        <pre><code>
+            @Component
+            @SessionScope
+            public class MySessionScopedBean {
+                // Bean methods and properties
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@ApplicationScope</h3>
+        <h4>Indicates that a bean is application-scoped.</h4>
+        <pre><code>
+            @Component
+            @ApplicationScope
+            public class MyApplicationScopedBean {
+                // Bean methods and properties
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@SessionAttributes</h3>
+        <h4>Used to store model attributes in the session.</h4>
+        <pre><code>
+            @Controller
+            @SessionAttributes("user")
+            public class MyController {
+                @ModelAttribute("user")
+                public User createUser() {
+                    return new User();
+                }
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@ModelAttribute</h3>
+        <h4>
+          Binds a method parameter or method return value to a named model
+          attribute.
+        </h4>
+        <pre><code>
+            @Controller
+            public class MyController {
+                @ModelAttribute("attribute")
+                public String addAttribute() {
+                    return "value";
+                }
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@Async</h3>
+        <h4>Indicates that a method should be executed asynchronously.</h4>
+        <pre><code>
+            @Service
+            public class MyService {
+                @Async
+                public void asyncMethod() {
+                    // Async method logic
+                }
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@Scheduled</h3>
+        <h4>
+          Marks a method to be scheduled with a cron expression or fixed
+          delay/rate.
+        </h4>
+        <pre><code>
+            @Component
+            public class MyScheduledTask {
+                @Scheduled(cron = "0 0 * * * ?")
+                public void scheduledMethod() {
+                    // Scheduled task logic
+                }
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@EnableScheduling</h3>
+        <h4>Enables support for scheduled tasks.</h4>
+        <pre><code>
+            @Configuration
+            @EnableScheduling
+            public class MyConfig {
+                // Configuration methods
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@Conditional</h3>
+        <h4>Registers a bean based on a condition.</h4>
+        <pre><code>
+            @Configuration
+            public class MyConfig {
+                @Bean
+                @Conditional(MyCondition.class)
+                public MyService myService() {
+                    return new MyService();
+                }
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@Profile</h3>
+        <h4>Registers a bean only if a specified profile is active.</h4>
+        <pre><code>
+            @Configuration
+            @Profile("dev")
+            public class DevConfig {
+                @Bean
+                public MyService myService() {
+                    return new MyService();
+                }
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@MockBean</h3>
+        <h4>
+          Creates a mock bean in a Spring application context (used with Spring
+          Boot for testing).
+        </h4>
+        <pre><code>
+            @SpringBootTest
+            public class MyTest {
+                @MockBean
+                private MyService myService;
+    
+                @Test
+                public void test() {
+                    // Test logic
+                }
+            }
+        </code></pre>
+      </div>
+
+      <div class="code-snippet">
+        <h3>@SpyBean</h3>
+        <h4>
+          Creates a spy bean in a Spring application context (used with Spring
+          Boot for testing).
+        </h4>
+        <pre><code>
+            @SpringBootTest
+            public class MyTest {
+                @SpyBean
+                private MyService myService;
+    
+                @Test
+                public void test() {
+                    // Test logic
+                }
+            }
+        </code></pre>
+      </div>
+
+      <!-- Add more code snippets similarly -->
+    </section>
+
+    <footer>
+      <p>&copy; 2024 By Subash Chandra Sahoo</p>
+    </footer>
+  </body>
+</html>
